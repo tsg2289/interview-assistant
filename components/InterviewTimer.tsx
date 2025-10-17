@@ -120,7 +120,7 @@ export function InterviewTimer({ interviewDate, onDateChange }: InterviewTimerPr
             <div className="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-800 rounded-lg p-3">
               <div className="flex items-center gap-2 text-orange-700 dark:text-orange-300">
                 <AlertTriangle size={16} />
-                <span className="text-sm font-medium">Interview is today! Make sure you're ready.</span>
+                <span className="text-sm font-medium">Interview is today! Make sure you&apos;re ready.</span>
               </div>
             </div>
           )}
