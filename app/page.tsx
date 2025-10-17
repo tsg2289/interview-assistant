@@ -22,8 +22,8 @@ export default function Home() {
         </header>
 
         {/* Main Navigation Cards */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Preparation Card */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {/* Firm Research Card */}
           <Link href="/preparation" className="block group">
             <GlassCard className="h-full">
               <div className="flex flex-col items-center text-center p-6">
@@ -42,14 +42,54 @@ export default function Home() {
             </GlassCard>
           </Link>
 
-          {/* Questions Card */}
+          {/* Ready Checklist Card */}
+          <Link href="/ready-checklist" className="block group">
+            <GlassCard className="h-full">
+              <div className="flex flex-col items-center text-center p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <CheckSquare className="w-10 h-10 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold mb-3">Ready Checklist</h2>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Comprehensive preparation checklist to ensure you're interview-ready
+                </p>
+                <span className="inline-flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold group-hover:gap-3 transition-all">
+                  Get Ready
+                  <span>→</span>
+                </span>
+              </div>
+            </GlassCard>
+          </Link>
+
+          {/* Practice Questions Card */}
+          <Link href="/prep-questions" className="block group">
+            <GlassCard className="h-full">
+              <div className="flex flex-col items-center text-center p-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold mb-3">Practice Questions</h2>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">
+                  Practice answering common interview questions with timed sessions
+                </p>
+                <span className="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 font-semibold group-hover:gap-3 transition-all">
+                  Start Practice
+                  <span>→</span>
+                </span>
+              </div>
+            </GlassCard>
+          </Link>
+
+          {/* Interview Questions Card */}
           <Link href="/questions" className="block group">
             <GlassCard className="h-full">
               <div className="flex flex-col items-center text-center p-6">
                 <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <CheckSquare className="w-10 h-10 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold mb-3">Interview Questions</h2>
+                <h2 className="text-2xl font-bold mb-3">Questions to Ask</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Strategic checklist of essential questions to ask your interviewer
                 </p>
@@ -64,15 +104,37 @@ export default function Home() {
 
         {/* Features Section */}
         <GlassCard className="mb-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">Features</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h3 className="text-2xl font-bold mb-6 text-center">Complete Interview Preparation</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Sparkles className="w-6 h-6 text-blue-600 dark:text-blue-400" />
               </div>
-              <h4 className="font-semibold mb-2">AI-Powered Research</h4>
+              <h4 className="font-semibold mb-2">AI Research</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Get comprehensive firm insights with LinkedIn profiles and articles
+                Comprehensive firm insights with LinkedIn profiles and articles
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <CheckSquare className="w-6 h-6 text-green-600 dark:text-green-400" />
+              </div>
+              <h4 className="font-semibold mb-2">Ready Checklist</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Comprehensive preparation checklist with 30+ tasks
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h4 className="font-semibold mb-2">Practice Questions</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Timed practice sessions with common interview questions
               </p>
             </div>
             
@@ -80,21 +142,9 @@ export default function Home() {
               <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <CheckSquare className="w-6 h-6 text-purple-600 dark:text-purple-400" />
               </div>
-              <h4 className="font-semibold mb-2">Strategic Questions</h4>
+              <h4 className="font-semibold mb-2">Questions to Ask</h4>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                39 carefully curated questions organized by category
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h4 className="font-semibold mb-2">Track Progress</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Check off questions and add notes as you go
+                39 strategic questions organized by category
               </p>
             </div>
           </div>
