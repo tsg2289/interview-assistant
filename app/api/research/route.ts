@@ -134,10 +134,10 @@ Focus ONLY on publicly available information. If certain information is not avai
       generatedAt: new Date().toISOString(),
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error in research API:', error);
     
-    if (error?.status === 401) {
+    if (error && typeof error === 'object' && 'status' in error && error.status === 401) {
       return NextResponse.json(
         { error: 'Invalid OpenAI API key. Please check your configuration.' },
         { status: 500 }
@@ -145,7 +145,7 @@ Focus ONLY on publicly available information. If certain information is not avai
     }
 
     return NextResponse.json(
-      { error: error?.message || 'An error occurred while researching the firm' },
+      { error: error && typeof error === 'object' && 'message' in error ? String(error.message) : 'An error occurred while researching the firm' },
       { status: 500 }
     );
   }

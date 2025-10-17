@@ -44,8 +44,8 @@ export default function PreparationPage() {
       }
 
       setResearch(data);
-    } catch (err: any) {
-      setError(err.message || 'An error occurred while researching the firm');
+    } catch (err: unknown) {
+      setError(err && typeof err === 'object' && 'message' in err ? String(err.message) : 'An error occurred while researching the firm');
     } finally {
       setIsLoading(false);
     }
@@ -234,7 +234,7 @@ export default function PreparationPage() {
               <div className="prose dark:prose-invert max-w-none">
                 <ReactMarkdown
                   components={{
-                    a: ({ node, ...props }) => (
+                    a: ({ ...props }) => (
                       <a {...props} target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline" />
                     ),
                   }}
