@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { GlassCard } from '@/components/GlassCard';
-import { ArrowLeft, Clock, Star, Play, Pause, RotateCcw, Download } from 'lucide-react';
+import { ArrowLeft, Clock, Star, Play, Pause, RotateCcw } from 'lucide-react';
 import { practiceQuestions } from '@/lib/practiceQuestions';
 import { PracticeQuestion } from '@/types/prep';
 
@@ -38,16 +38,6 @@ export default function PrepQuestionsPage() {
     };
   }, [isPracticing, timeRemaining]);
 
-  const categorizedQuestions = useMemo(() => {
-    const categories: { [key: string]: PracticeQuestion[] } = {};
-    practiceQuestions.forEach(question => {
-      if (!categories[question.category]) {
-        categories[question.category] = [];
-      }
-      categories[question.category].push(question);
-    });
-    return categories;
-  }, []);
 
   const filteredQuestions = useMemo(() => {
     let filtered = practiceQuestions;

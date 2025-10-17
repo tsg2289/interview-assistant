@@ -6,7 +6,7 @@ import { GlassCard } from '@/components/GlassCard';
 import { PrepChecklistItem } from '@/components/PrepChecklistItem';
 import { InterviewTimer } from '@/components/InterviewTimer';
 import { usePrepChecklist } from '@/hooks/usePrepChecklist';
-import { ArrowLeft, Filter, RotateCcw, Download, Clock, AlertCircle, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Filter, RotateCcw, Download, AlertCircle } from 'lucide-react';
 
 type FilterType = 'all' | 'critical' | 'important' | 'optional' | 'completed' | 'remaining';
 type TimeframeFilter = 'all' | 'week-before' | 'day-before' | 'hour-before' | 'during';
@@ -19,8 +19,6 @@ export default function ReadyChecklistPage() {
     resetChecklist,
     getProgress,
     getItemsByCategory,
-    getItemsByTimeframe,
-    getItemsByPriority,
     getCriticalItems,
     isLoading,
   } = usePrepChecklist();
@@ -141,7 +139,7 @@ export default function ReadyChecklistPage() {
           
           <h1 className="text-4xl sm:text-5xl font-bold mb-2">Interview Ready Checklist</h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Comprehensive preparation checklist to ensure you're ready for your interview
+            Comprehensive preparation checklist to ensure you&apos;re ready for your interview
           </p>
         </header>
 

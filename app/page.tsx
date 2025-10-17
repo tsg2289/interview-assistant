@@ -51,7 +51,7 @@ export default function Home() {
                 </div>
                 <h2 className="text-2xl font-bold mb-3">Ready Checklist</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Comprehensive preparation checklist to ensure you're interview-ready
+                  Comprehensive preparation checklist to ensure you&apos;re interview-ready
                 </p>
                 <span className="inline-flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold group-hover:gap-3 transition-all">
                   Get Ready
